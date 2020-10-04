@@ -1,4 +1,4 @@
-# below command to run if matplotlib not installed
+# below command to run incase matplotlib not installed
 # !pip install matplotlib
 
 import matplotlib
