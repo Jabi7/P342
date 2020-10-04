@@ -150,7 +150,7 @@ def bisection(f, a, b, epsilon = 10**-6, key = "0"):
     print("\nIteration  Absolute error")
     fl = open('bisection_for_'+key+'.txt', 'w+')
     fl.write('Iteration  Absolute error\n')
-    while(e>epsilon and i<100):
+    while(e>epsilon and i < 200):
         c = (a+b)/2
         if f(a)*f(c) < 0:
             e = abs(b-c)
@@ -182,7 +182,7 @@ def falsi(f, a, b, epsilon = 10**-6, key = "0"):
         fl.write('Iteration  Absolute error\n')
         print("\nIteration  Absolute error")
        
-        while(e>=epsilon):
+        while(e>=epsilon and i < 200):
             
             c = b - ((b-a)*f(b))/(f(b) - f(a))
             
@@ -216,7 +216,7 @@ def newton_raphson(f, x0, epsilon = 10**-6, key = "0"):
     fl = open('Newton_Raphson_for_'+key+'.txt', 'w+')
     fl.write('Iteration  Absolute error\n')
     print("\nIteration  Absolute error")
-    while(ec):
+    while(ec and i < 200):
         l = xn
         xn = l - f(l)/der(f, l)
         e = abs(l - xn)
