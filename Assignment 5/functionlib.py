@@ -160,7 +160,7 @@ def bisection(f, a, b, epsilon = 10**-6, key = "0"):
             a = c
         fl.write(str(i)+'          '+str(e)+'\n')
         x.append(i)
-        y.append(abs(b-a))
+        y.append(e)
         print(i,'        ', e)
         i +=1
     fig, ax = plt.subplots()
