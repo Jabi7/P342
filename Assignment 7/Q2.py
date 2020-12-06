@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 from math import log
 e = 2.71828
 
+dy  = lambda u, y, x : u
+ddy = lambda u, y, x : 1 - x - u
 
 
 # Q2, a
