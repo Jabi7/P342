@@ -125,6 +125,46 @@ def bracket_root(f,a,b, beta = 1.5):
         print('Try different range')
     return a,b   
     
+### ASSIGNMENT 4 ###
+
+# FUNCTION FOR LU DECOMPOSITION
+def LU_decomp(m,b):
+    for j in range(len(m)):
+        p_pivot(m,b,j)					#calling partial pivot function from funtionlib
+        for i in range(len(m)):
+
+            if i <= j:
+                s = 0
+                for k in range(i): 
+                    s += m[i][k]*m[k][j]
+                m[i][j] = m[i][j] - s
+            if i>j:
+                s = 0
+                for k in range(j):
+                    s += m[i][k]*m[k][j]
+                m[i][j] = 1/m[j][j] * (m[i][j] - s)
+    return m
+
+# FUNCTION FOR FORWARD SUBSTITUTION
+def for_sub(m,b):
+    y = zero_m(len(m),1)
+    for i in range(len(m)):
+        s = 0
+        for j in range(i): 
+            s += m[i][j]*y[j]
+        y[i] += b[i] - s  
+    return y
+
+# FUNCTION FOR BACKWARD SUBSTITUTION
+def back_sub(m,b):
+    x = zero_m(len(m),1)
+    for i in reversed(range(len(m))):
+        s = 0
+        for j in reversed(range(len(m))): 
+            if i<j:
+                s += m[i][j]*x[j]
+        x[i] += 1/m[i][i] * (b[i] - s)  
+    return x
 
 
 ### ASSIGNMENT 5 ###
