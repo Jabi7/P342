@@ -147,7 +147,7 @@ def LU_decomp(m,b):
 
 # FUNCTION FOR FORWARD SUBSTITUTION
 def for_sub(m,b):
-    y = zero_m(len(m),1)
+    y = zero_matrix(len(m),1)
     for i in range(len(m)):
         s = 0
         for j in range(i): 
@@ -157,7 +157,7 @@ def for_sub(m,b):
 
 # FUNCTION FOR BACKWARD SUBSTITUTION
 def back_sub(m,b):
-    x = zero_m(len(m),1)
+    x = zero_matrix(len(m),1)
     for i in reversed(range(len(m))):
         s = 0
         for j in reversed(range(len(m))): 
