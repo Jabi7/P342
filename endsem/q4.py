@@ -13,4 +13,4 @@ print('the final velocity = 47.89999999999995')
 # Guess the 1st value of slope: 40
 # Guess the 2nd value of slope: 50
 # The obtained solution for z is : 47.89999999999995
-# the final velocity = 47.89999999999995 
+# the velocity = 47.89999999999995 
